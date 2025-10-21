@@ -49,16 +49,13 @@ public class NewBehaviourScript : MonoBehaviour
 
 
         anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+        anim.SetFloat("Height", GetComponent<Rigidbody2D>().velocity.y);
+        anim.SetBool("Grounded", grounded);
 
     }
     void jump()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHight);
-
-
-        anim.SetFloat("Height", GetComponent<Rigidbody2D>().velocity.y);
-        anim.SetBool("Grounded", grounded);
-
 
     }
     void FixedUpdate()
